@@ -1,0 +1,256 @@
+/* src/styles/Chat.module.css */
+
+.chatContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  max-height: 100vh;
+  padding: 10px;
+  background-color: #f7f7f9; /* Color de fondo claro */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  box-sizing: border-box;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  margin: 0px 0 10px 0; /* Añade margen superior para evitar que el navbar tape el texto */
+  padding: 10px;
+  border-radius: 10px; /* Bordes más redondeados */
+  background-color: #ffffff; /* Fondo blanco */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra más difusa */
+  max-height: calc(100vh - 100px);
+}
+
+.userMessage,
+.chatbotMessage {
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  word-break: break-word; /* Maneja el desbordamiento de texto */
+  width: auto; /* Ajusta el ancho automáticamente */
+  max-width: 60%; /* Limita el ancho máximo al 60% del contenedor */
+  box-sizing: border-box;
+  padding: 10px; /* Espaciado interno en la burbuja */
+  overflow-wrap: break-word; /* Asegura que el texto largo se ajuste */
+  white-space: pre-wrap; /* Mantiene los saltos de línea y ajusta el texto */
+}
+
+.userMessage {
+  align-self: flex-end;
+  background-color: #007bff; /* Azul brillante */
+  color: #ffffff;
+  border-radius: 18px 18px 0 18px;
+  margin: 5px 0 5px auto; /* Ajustes de margen */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+  transition: background-color 0.3s;
+}
+
+.userMessage:hover {
+  background-color: #0056b3; /* Azul oscuro al pasar el mouse */
+}
+
+.chatbotMessage {
+  align-self: flex-start;
+  background-color: #f0f0f0; /* Fondo gris claro */
+  color: #333;
+  border-radius: 18px 18px 18px 0;
+  margin: 5px auto 5px 0; /* Ajustes de margen */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra más pronunciada */
+}
+
+.inputContainer {
+  display: flex;
+  align-items: center; /* Alinear elementos verticalmente */
+  padding: 10px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
+  gap: 10px; /* Espacio entre los elementos */
+}
+
+.messageInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border 0.3s;
+}
+
+.messageInput:focus {
+  border-color: #1e90ff;
+  outline: none;
+}
+
+.sendButton {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.sendButton:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+.messageEmbed {
+  background-color: #f5f5f5;
+  padding: 10px;
+  border-radius: 4px;
+  overflow-x: auto;
+}
+
+/* Nuevos estilos para <pre> y <code> */
+.messageEmbed pre {
+  white-space: pre-wrap; /* Permite que el texto se ajuste y se divida en líneas */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  margin: 0; /* Elimina el margen por defecto */
+}
+
+.messageEmbed code {
+  white-space: pre-wrap; /* Permite que el texto se ajuste y se divida en líneas */
+  word-wrap: break-word; /* Permite que las palabras largas se dividan */
+  display: block; /* Asegura que el contenedor se expanda verticalmente */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modalContent {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 90%;
+}
+
+.modalContent h2 {
+  margin-bottom: 20px;
+  font-size: 24px;
+  color: #333;
+}
+
+.memoryInput {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.saveButton {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-right: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.saveButton:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+.cancelButton {
+  background-color: #ccc;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.addMemoryButton {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.addMemoryButton:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+
+.fileInput {
+  display: none; /* Ocultar el input de archivo */
+}
+
+.fileInput + label {
+  background-color: #1e90ff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s, transform 0.2s;
+  white-space: nowrap; /* Evitar que el texto se salga del botón */
+}
+
+.fileInput + label:hover {
+  background-color: #007bff;
+  transform: scale(1.05);
+}
+
+.checkboxContainer {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+@media (max-width: 600px) {
+  .inputContainer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 5px; /* Reducir el espacio entre los elementos */
+  }
+
+  .messageInput {
+  
+    margin-bottom: 5px; /* Añadir margen inferior */
+  }
+
+  .fileInput + label,
+  .sendButton {
+    
+    padding: 10px;
+    font-size: 14px; /* Reducir el tamaño de la fuente */
+  }
+
+  .checkboxContainer {
+    justify-content: center;
+  }
+}

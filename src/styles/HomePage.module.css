@@ -1,0 +1,36 @@
+/* src/pages/HomePage.module.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    height: 100vh;
+    background-color: #f0f2f5;
+    font-family: Arial, sans-serif;
+  }
+  
+  .welcomeMessage {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .linkContainer {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .link {
+    text-decoration: none;
+    color: white;
+    background-color: #1e90ff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .link:hover {
+    background-color: #007bff;
+  }
