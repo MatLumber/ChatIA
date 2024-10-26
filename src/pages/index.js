@@ -6,16 +6,16 @@ import styles from '../styles/HomePage.module.css';
 
 export default function HomePage() {
   const { user, loading } = useAuth();
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p>Cargando...</p>;
 
   return (
     <div className={styles.container}>
       {user ? (
         <div>
-          <h1 className={styles.welcomeMessage}>Welcome, {user.email}</h1>
+          <h1 className={styles.welcomeMessage}>Bienvenido, {user.email}</h1>
           <div className={styles.linkContainer}>
             <Link href="/chats" className={styles.link}>
-              Go to Chats
+              Ir a los chats
             </Link>
           </div>
         </div>

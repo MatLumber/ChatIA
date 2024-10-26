@@ -107,8 +107,8 @@ export default function ChatsPage() {
     }
   };
 
-  if (loading) return <p>Loading...</p>;
-  if (!user) return <p>Please log in to view your chats.</p>;
+  if (loading) return <p>Cargando...</p>;
+  if (!user) return <p>Por favor inicia sesión para ver tus chats.</p>;
   
   return (
     <>
